@@ -2,12 +2,12 @@ name: AeroTrack
 settings:
   DEVELOPMENT_TEAM: PKFR9X987K
   SWIFT_VERSION: "6.0"
+  SWIFT_STRICT_CONCURRENCY: complete
 targets:
   AeroTrack:
     type: application
     platform: iOS
-    deploymentTarget:
-      iOS: 26.0
+    deploymentTarget: "26.0"
     sources:
       - path: AeroTrack
       - path: AeroTrack.icon
@@ -23,3 +23,25 @@ targets:
         ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS: 1
         ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
         CODE_SIGN_ENTITLEMENTS: AeroTrack/Supporting/AeroTrack.entitlements
+
+  AeroTrackTests:
+    type: bundle.unit-test
+    platform: iOS
+    deploymentTarget: "26.0"
+    sources:
+      - AeroTrackTests
+    dependencies:
+      - target: AeroTrack
+    settings:
+      base:
+        GENERATE_INFOPLIST_FILE: YES
+        PRODUCT_BUNDLE_IDENTIFIER: com.tomkuttler.AeroTrackTests
+schemes:
+  AeroTrack:
+    build:
+      targets:
+        AeroTrack: all
+        AeroTrackTests: [test]
+    test:
+      targets:
+        - AeroTrackTests
