@@ -1,0 +1,25 @@
+name: AeroTrack
+settings:
+  DEVELOPMENT_TEAM: PKFR9X987K
+  SWIFT_VERSION: "6.0"
+targets:
+  AeroTrack:
+    type: application
+    platform: iOS
+    deploymentTarget:
+      iOS: 26.0
+    sources:
+      - path: AeroTrack
+      - path: AeroTrack.icon
+        type: file
+        buildPhase: resources
+    settings:
+      base:
+        TARGETED_DEVICE_FAMILY: 1
+        PRODUCT_NAME: AeroTrack
+        INFOPLIST_FILE: AeroTrack/Supporting/Info.plist
+        PRODUCT_BUNDLE_IDENTIFIER: com.tomkuttler.AeroTrack
+        ASSETCATALOG_COMPILER_APPICON_NAME: AeroTrack
+        ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS: 1
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+        CODE_SIGN_ENTITLEMENTS: AeroTrack/Supporting/AeroTrack.entitlements
